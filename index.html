@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="app.js"></script>
+    
+<style>
+    
+    body {
+        background-color: lightgrey;
+    }
+    
+#container {
+    width: 80%;
+    margin: auto;
+    padding: auto;
+    
+}
+
+    #movieResult{
+        width:100%;
+        float: left;
+        position: relative;
+        padding:auto;
+        margin: auto;
+        padding-top: 25px;  
+        padding-right: 50px;
+    }
+    
+    #movieSearch{
+        width: 40%;
+        float: left;
+        position: relative;
+        padding: auto;
+        margin: auto;
+        padding-top: 25px;
+        padding-right: 50px;
+        padding-left: 200px;
+        
+    }
+    
+    #movieImage{
+        width: 35%;
+        float: left;
+        position: relative;
+        padding: auto;
+        margin: auto;
+        padding-top: 35px;
+        padding-right: 0px;
+        padding-left: 300px;
+    }
+    
+</style>
+
+</head>
+
+<body>
+
+
+<div ng-app="myApp" ng-controller="movieCtrl" id="container"> 
+
+<form class="form-horizontal" ng-submit="submitSearch(myForm.$valid)" name="myForm" novalidate>
+
+    <div class="form-group" id="movieResult">
+      <center><h2>Enter a movie title: </h2></center>
+      <input type="text" class="form-control" ng-model="search" required>
+      <br>
+      <input type="submit" value="Search.." class="btn btn-primary btn-block">
+      <br>
+    </div>    
+
+    <div class="form-group" id="movieSearch">
+
+       <strong><h2>{{ searchHeader }}</h2> </strong> 
+       <strong><h3>{{ imdbR }}</h3></strong>
+       <strong><h3>{{ released }}</h3></strong>
+       <strong><h3>{{ runtime }}</h3></strong>
+       <strong><h3>{{ country }}</h3></strong>
+       <strong><h3>{{ boxOffice }}</h3></strong>
+    </div>
+    
+    <div id = "movieImage">
+       <img src="{{imageSource}}" alt= "{{altText}}">
+    </div>
+</form>
+</div>
+
+
+
+
+</body>
+</html>
